@@ -1,0 +1,34 @@
+'What do you want to name your robot? ROB: Hello kiddo!\n
+ROB: What must I do next?  > ROB moved forward by 10 steps.\n
+ > ROB now at position (0,10).\n
+ROB: What must I do next?  > ROB turned right.\n
+ > ROB now at position (0,10).\n
+ROB: What must I do next?  > ROB moved forward by 10 steps.\n
+ > ROB now at position (10,10).\n
+ROB: What must I do next?  > ROB moved forward by 10 steps.\n
+ > ROB now at position (20,10).\n
+ > ROB turned right.\n
+ > ROB now at position (20,10).\n
+ > ROB moved forward by 10 steps.\n 
+ > ROB now at position (20,0).\n 
+ > ROB replayed 3 commands.\n
+ > ROB now at position (20,0).\n
+ROB: What must I do next? ROB: Shutting down..\n'
+
+'What do you want to name your robot?\n
+ROB: Hello kiddo!\n
+ROB: What must I do next?  > ROB moved forward by 10 steps.\n
+ > ROB now at position (0,10).\n
+ROB: What must I do next?  > ROB turned right.\n
+ > ROB now at position (0,10).\n
+ROB: What must I do next?  > ROB moved forward by 10 steps.\n
+ > ROB now at position (10,10).\n
+ROB: What must I do next?  > ROB moved forward by 10 steps.\n
+ > ROB now at position (20,10).\n
+ > ROB turned right.\n
+ > ROB now at position (20,10).\n
+ > ROB moved forward by 10 steps.\n
+ > ROB now at position (20,0).\n
+ > ROB replayed 3 commands.\n
+ > ROB now at position (20,0).\n
+ROB: What must I do next? ROB: Shutting down..'
