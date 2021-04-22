@@ -1,42 +1,61 @@
 package za.co.wethinkcode.toyrobot;
 
-
 public abstract class Command {
     private final String name;
-    private final String argument;
+    private String argument;
 
+    public abstract boolean execute(Robot target);
 
-    public Command(String name,String argument){
-        this.name = name;
-        this.argument = argument.trim().toLowerCase();
-
+    public Command(String name){
+        this.name = name.trim().toLowerCase();
+        this.argument = "";
     }
 
-    public String getName() {
+    public Command(String name, String argument) {
+        this(name);
+        this.argument = argument.trim();
+    }
+
+    public String getName() {                                                                           //<2>
         return name;
     }
-
 
     public String getArgument() {
         return this.argument;
     }
 
-
     public static Command create(String instruction) {
         String[] args = instruction.toLowerCase().trim().split(" ");
         switch (args[0]){
             case "shutdown":
+            case "off":
                 return new ShutdownCommand();
             case "help":
-                return new  HelpCommand();
+                return new HelpCommand();
             case "forward":
                 return new ForwardCommand(args[1]);
+            case "back":
+                return new BackCommand(args[1]);
+            case "right":
+                return new RightCommand();
+            case "left":
+                return new LeftCommand();
+            case "sprint":
+                return new SprintCommand(args[1]);
+            case "replay":
+                return new ReplayCommand(instruction.toLowerCase().trim()
+                .replace("replay", "").replaceAll("\\s", ""));
+            case "reset":
+                return new ResetCommand();
+            case "mazerun":
+                if (args.length == 1){
+                    return new RunnerCommand("");
+                }else{
+                    return new RunnerCommand(args[1]);
+                }
             default:
                 throw new IllegalArgumentException("Unsupported command: " + instruction);
         }
-
     }
-
-    public abstract boolean execute(Robot target);
-
 }
+

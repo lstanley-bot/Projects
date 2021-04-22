@@ -2,16 +2,16 @@ package za.co.wethinkcode.toyrobot;
 
 import za.co.wethinkcode.toyrobot.world.IWorld;
 
-public class ForwardCommand extends Command {
+public class BackCommand extends Command {
     /**
-     * ForwardCommand constructor
+     * BackCommand constructor
      */
-    public ForwardCommand(String argument) {
-        super("forward", argument);
+    public BackCommand(String argument) {
+        super("back", argument);
     }
 
     /**
-     * Instructs robot to move forward
+     * Instructs robot to move backwards
      *
      * @param target the current robot object
      * @return `true`
@@ -19,9 +19,9 @@ public class ForwardCommand extends Command {
     @Override
     public boolean execute(Robot target) {
         int nrSteps = Integer.parseInt(getArgument());
-        IWorld.UpdateResponse r = target.getWorld().updatePosition(nrSteps);
+        IWorld.UpdateResponse r = target.getWorld().updatePosition(-nrSteps);
         if (r == IWorld.UpdateResponse.SUCCESS) {
-            target.setStatus("Moved forward by "+nrSteps+" steps.");
+            target.setStatus("Moved back by "+nrSteps+" steps.");
         } else if (r == IWorld.UpdateResponse.FAILED_OBSTRUCTED) {
             target.setStatus("There is an obstacle in the way.");
         } else {
